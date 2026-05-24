@@ -493,165 +493,6 @@
     letter-spacing: 0.06em;
   }
 
-  /* Hero SVG */
-  #hero-svg-wrap {
-    position: absolute;
-    inset: 0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    pointer-events: none;
-    opacity: 0;
-    animation: fadeUp 1.4s 0.8s forwards;
-  }
-  #hero-svg-wrap svg { width: 100%; max-width: 700px; height: auto; }
-
-  /* Metrics */
-  #metrics { background: var(--bg3); }
-  .metrics-row {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 20px;
-    margin-bottom: 16px;
-  }
-  .metric-card {
-    background: var(--surface);
-    border: 1px solid var(--border2);
-    border-radius: 4px;
-    padding: 28px 24px;
-    position: relative;
-    overflow: hidden;
-  }
-  .metric-card::before {
-    content: '';
-    position: absolute;
-    top: 0; left: 0; right: 0;
-    height: 2px;
-    background: var(--amber-dim);
-  }
-  .metric-label {
-    font-family: var(--mono);
-    font-size: 9px;
-    font-weight: 400;
-    color: var(--text-dim);
-    letter-spacing: 0.2em;
-    text-transform: uppercase;
-    margin-bottom: 16px;
-  }
-  .metric-value {
-    font-family: var(--mono);
-    font-size: 36px;
-    font-weight: 300;
-    color: var(--amber);
-    line-height: 1;
-    margin-bottom: 8px;
-    letter-spacing: -0.02em;
-  }
-  .metric-note {
-    font-size: 12px;
-    color: var(--text-muted);
-    line-height: 1.5;
-  }
-  .metric-note em { color: var(--text-dim); font-style: normal; }
-
-  /* Timeline */
-  #journey { background: var(--bg2); }
-  .timeline {
-    position: relative;
-    padding-left: 32px;
-  }
-  .timeline::before {
-    content: '';
-    position: absolute;
-    left: 0;
-    top: 8px;
-    bottom: 0;
-    width: 1px;
-    background: var(--border2);
-  }
-  .tl-item {
-    position: relative;
-    padding: 0 0 48px 40px;
-  }
-  .tl-item:last-child { padding-bottom: 0; }
-  .tl-item::before {
-    content: '';
-    position: absolute;
-    left: -5px;
-    top: 8px;
-    width: 9px;
-    height: 9px;
-    border-radius: 50%;
-    border: 1px solid var(--amber-dim);
-    background: var(--bg);
-  }
-  .tl-item.current::before {
-    background: var(--amber);
-    border-color: var(--amber);
-    box-shadow: 0 0 10px rgba(212,162,76,0.35);
-  }
-  .tl-date {
-    font-family: var(--mono);
-    font-size: 10px;
-    color: var(--amber-dim);
-    letter-spacing: 0.15em;
-    text-transform: uppercase;
-    margin-bottom: 8px;
-  }
-  .tl-title {
-    font-family: var(--sans);
-    font-size: 16px;
-    font-weight: 500;
-    color: var(--text);
-    margin-bottom: 6px;
-  }
-  .tl-body {
-    font-size: 13px;
-    color: var(--text-muted);
-    line-height: 1.65;
-    max-width: 560px;
-  }
-
-  /* Open Questions */
-  #questions { background: var(--bg); }
-  .questions-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 16px;
-  }
-  .question-card {
-    border: 1px solid var(--border);
-    border-radius: 4px;
-    padding: 24px 28px;
-    background: var(--surface);
-    transition: border-color 0.2s, background 0.2s;
-    cursor: default;
-  }
-  .question-card:hover {
-    border-color: var(--border2);
-    background: var(--surface2);
-  }
-  .question-n {
-    font-family: var(--mono);
-    font-size: 10px;
-    color: var(--text-dim);
-    letter-spacing: 0.1em;
-    margin-bottom: 12px;
-  }
-  .question-text {
-    font-family: var(--serif);
-    font-size: clamp(16px, 1.8vw, 20px);
-    font-style: italic;
-    color: var(--text);
-    line-height: 1.4;
-    margin-bottom: 12px;
-  }
-  .question-sub {
-    font-size: 12px;
-    color: var(--text-muted);
-    line-height: 1.6;
-  }
-
   /* Scroll reveal */
   .reveal {
     opacity: 0;
@@ -684,8 +525,6 @@
     .roadmap-item::before { display: none; }
     footer { flex-direction: column; gap: 16px; text-align: center; padding: 40px 24px; }
     .arch-layer { grid-template-columns: 60px 1fr auto; gap: 16px; padding: 20px; }
-    .metrics-row { grid-template-columns: 1fr; }
-    .questions-grid { grid-template-columns: 1fr; }
   }
 </style>
 </head>
@@ -698,14 +537,13 @@
   <ul class="nav-links">
     <li><a href="#philosophy">Philosophy</a></li>
     <li><a href="#architecture">T-MMU</a></li>
-    <li><a href="#journey">Journey</a></li>
-    <li><a href="#questions">Questions</a></li>
+    <li><a href="#formula">P_eff</a></li>
+    <li><a href="#state">State</a></li>
     <li><a href="#roadmap">Roadmap</a></li>
   </ul>
 </nav>
 
 <section id="hero">
-  <canvas id="hero-canvas" style="position:absolute;inset:0;width:100%;height:100%;pointer-events:none;opacity:0;animation:fadeUp 1.8s 1s forwards;"></canvas>
   <div class="hero-inner">
     <div class="hero-tag">Experimental · Cognitive Memory Runtime</div>
     <h1 class="hero-title">Project<br><em>Almond</em></h1>
@@ -880,117 +718,6 @@
 
 <div class="section-divider"></div>
 
-<section id="metrics">
-  <div class="section-wrap">
-    <div class="section-label reveal">System Pulse</div>
-    <h2 class="section-title reveal">Live Metrics</h2>
-    <p class="reveal" style="font-size:15px; color:var(--text-muted); margin-bottom:40px; max-width:560px;">Current system benchmarks. Numbers update as experiments run — placeholder values shown while pipeline stabilizes.</p>
-    <div class="metrics-row reveal">
-      <div class="metric-card">
-        <div class="metric-label">Retrieval Precision</div>
-        <div class="metric-value" id="m-precision">—</div>
-        <div class="metric-note">LongMemEval hybrid reranking.<br><em>Actively improving</em></div>
-      </div>
-      <div class="metric-card">
-        <div class="metric-label">Context Pollution Score</div>
-        <div class="metric-value" id="m-pollution">—</div>
-        <div class="metric-note">Irrelevant memories injected into L2.<br><em>Lower is better</em></div>
-      </div>
-      <div class="metric-card">
-        <div class="metric-label">Memory Layers Active</div>
-        <div class="metric-value">4</div>
-        <div class="metric-note">L1 through L4 operational.<br><em>L4 abstraction in research</em></div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<div class="section-divider"></div>
-
-<section id="journey">
-  <div class="section-wrap">
-    <div class="section-label reveal">Development Log</div>
-    <h2 class="section-title reveal">Journey so far</h2>
-    <p class="reveal" style="font-size:15px; color:var(--text-muted); margin-bottom:56px; max-width:560px;">Almond began as a single question. Each entry below marks a meaningful shift in thinking — not just in code, but in what memory means for artificial systems.</p>
-    <div class="timeline reveal">
-      <div class="tl-item">
-        <div class="tl-date">Early 2026 · The Question</div>
-        <div class="tl-title">The beginning</div>
-        <div class="tl-body">Not a roadmap, not a pitch. A single observation: AI systems remember everything badly instead of remembering important things well. That question quietly became a research project.</div>
-      </div>
-      <div class="tl-item">
-        <div class="tl-date">Phase 01 · Architecture</div>
-        <div class="tl-title">T-MMU prototype established</div>
-        <div class="tl-body">The four-layer memory stack (L1 through L4) takes shape. Memory stops being a flat list and becomes a governed hierarchy — permanent, active, persistent, and archival layers with distinct eviction rules.</div>
-      </div>
-      <div class="tl-item">
-        <div class="tl-date">Phase 01 · Scoring</div>
-        <div class="tl-title">P_eff formula developed</div>
-        <div class="tl-body">Static memory ranking replaced with dynamic decay. The P_eff formula introduces time, reinforcement, and pressure as first-class memory signals. Not every memory deserves immortality becomes foundational philosophy.</div>
-      </div>
-      <div class="tl-item">
-        <div class="tl-date">Phase 01 · Retrieval</div>
-        <div class="tl-title">Hybrid retrieval implemented</div>
-        <div class="tl-body">Semantic flooding — where irrelevant but similar memories flood active context — proved a critical failure mode. Hybrid reranking with P_eff weighting, adaptive depth, and threshold gating dramatically improved context cleanliness.</div>
-      </div>
-      <div class="tl-item">
-        <div class="tl-date">Phase 01 · Evaluation</div>
-        <div class="tl-title">Unified evaluation runtime</div>
-        <div class="tl-body">LongMemEval integration, automated ablation pipelines, and overnight benchmark orchestration built. The project crossed from "collection of AI scripts" into recognizable research infrastructure.</div>
-      </div>
-      <div class="tl-item current">
-        <div class="tl-date">Phase 02 · Now</div>
-        <div class="tl-title">Systems integration & stabilization</div>
-        <div class="tl-body">Retrieval precision continues improving. Context cleanliness, orchestration reliability, and benchmark realism all under active work. The hardest problems — contradiction handling, temporal reasoning, semantic consolidation — are ahead.</div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<div class="section-divider"></div>
-
-<section id="questions">
-  <div class="section-wrap">
-    <div class="section-label reveal">Research Frontier</div>
-    <h2 class="section-title reveal">Open Questions</h2>
-    <p class="reveal" style="font-size:15px; color:var(--text-muted); margin-bottom:48px; max-width:560px;">These are not engineering problems waiting for a clever library. They are foundational questions about how artificial cognition should work over time.</p>
-    <div class="questions-grid reveal">
-      <div class="question-card">
-        <div class="question-n">Q.01</div>
-        <div class="question-text">How should artificial forgetting behave?</div>
-        <div class="question-sub">Not all forgetting is failure. What decay curves produce useful selective attention rather than random loss?</div>
-      </div>
-      <div class="question-card">
-        <div class="question-n">Q.02</div>
-        <div class="question-text">What makes a memory worth keeping?</div>
-        <div class="question-sub">Importance is dynamic. A memory irrelevant today may be critical tomorrow. How should salience be tracked over time?</div>
-      </div>
-      <div class="question-card">
-        <div class="question-n">Q.03</div>
-        <div class="question-text">Can episodic memories become semantic knowledge?</div>
-        <div class="question-sub">Humans abstract experience into understanding. Can artificial systems compress specific events into generalized insight without losing what mattered?</div>
-      </div>
-      <div class="question-card">
-        <div class="question-n">Q.04</div>
-        <div class="question-text">How should conflicting memories resolve?</div>
-        <div class="question-sub">When two stored beliefs contradict each other, which wins? What should a governed memory system do with conflict rather than ignoring it?</div>
-      </div>
-      <div class="question-card">
-        <div class="question-n">Q.05</div>
-        <div class="question-text">What creates continuity of identity over time?</div>
-        <div class="question-sub">If memory constantly decays and updates, what makes the system consistent? What is the artificial equivalent of a stable self?</div>
-      </div>
-      <div class="question-card">
-        <div class="question-n">Q.06</div>
-        <div class="question-text">How should long-term cognition scale under entropy?</div>
-        <div class="question-sub">As memory accumulates, noise grows. What architectural properties allow a system to remain coherent under long-term cognitive pressure?</div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<div class="section-divider"></div>
-
 <section id="roadmap">
   <div class="section-wrap">
     <div class="section-label reveal">What comes next</div>
@@ -1053,108 +780,7 @@
 </footer>
 
 <script>
-// Hero neural graph canvas
-(function() {
-  const canvas = document.getElementById('hero-canvas');
-  if (!canvas) return;
-  const ctx = canvas.getContext('2d');
-  let W, H, nodes = [], edges = [], t = 0;
-
-  const NODE_COUNT = 18;
-  const AMBER = 'rgba(212,162,76,';
-
-  function resize() {
-    W = canvas.width = canvas.offsetWidth;
-    H = canvas.height = canvas.offsetHeight;
-  }
-
-  function initNodes() {
-    nodes = [];
-    for (let i = 0; i < NODE_COUNT; i++) {
-      nodes.push({
-        x: 0.1 * W + Math.random() * 0.8 * W,
-        y: 0.15 * H + Math.random() * 0.7 * H,
-        r: 1.5 + Math.random() * 2,
-        phase: Math.random() * Math.PI * 2,
-        speed: 0.003 + Math.random() * 0.004,
-        ox: 0, oy: 0,
-      });
-    }
-    edges = [];
-    for (let i = 0; i < nodes.length; i++) {
-      for (let j = i + 1; j < nodes.length; j++) {
-        const dx = nodes[i].x - nodes[j].x;
-        const dy = nodes[i].y - nodes[j].y;
-        const d = Math.sqrt(dx*dx + dy*dy);
-        if (d < W * 0.28) edges.push([i, j, d]);
-      }
-    }
-  }
-
-  function draw() {
-    t++;
-    ctx.clearRect(0, 0, W, H);
-
-    // edges
-    edges.forEach(([i, j, d]) => {
-      const ni = nodes[i], nj = nodes[j];
-      const pulse = 0.5 + 0.5 * Math.sin(t * 0.012 + ni.phase);
-      const alpha = (1 - d / (W * 0.28)) * 0.09 * pulse;
-      ctx.beginPath();
-      ctx.moveTo(ni.x + ni.ox, ni.y + ni.oy);
-      ctx.lineTo(nj.x + nj.ox, nj.y + nj.oy);
-      ctx.strokeStyle = AMBER + alpha + ')';
-      ctx.lineWidth = 0.6;
-      ctx.stroke();
-    });
-
-    // nodes
-    nodes.forEach(n => {
-      n.ox = Math.sin(t * n.speed + n.phase) * 8;
-      n.oy = Math.cos(t * n.speed * 0.7 + n.phase) * 6;
-      const pulse = 0.5 + 0.5 * Math.sin(t * n.speed * 2 + n.phase);
-      ctx.beginPath();
-      ctx.arc(n.x + n.ox, n.y + n.oy, n.r + pulse * 0.8, 0, Math.PI * 2);
-      ctx.fillStyle = AMBER + (0.15 + pulse * 0.12) + ')';
-      ctx.fill();
-    });
-
-    requestAnimationFrame(draw);
-  }
-
-  window.addEventListener('resize', () => { resize(); initNodes(); });
-  resize();
-  initNodes();
-  draw();
-})();
-
-// Metrics counter animation
-function animateCount(el, target, suffix, decimals) {
-  let start = null;
-  const duration = 1800;
-  function step(ts) {
-    if (!start) start = ts;
-    const p = Math.min((ts - start) / duration, 1);
-    const ease = 1 - Math.pow(1 - p, 3);
-    el.textContent = (target * ease).toFixed(decimals) + suffix;
-    if (p < 1) requestAnimationFrame(step);
-  }
-  requestAnimationFrame(step);
-}
-
-const metricObserver = new IntersectionObserver((entries) => {
-  entries.forEach(e => {
-    if (e.isIntersecting) {
-      animateCount(document.getElementById('m-precision'), 71.4, '%', 1);
-      animateCount(document.getElementById('m-pollution'), 8.3, '%', 1);
-      metricObserver.disconnect();
-    }
-  });
-}, { threshold: 0.3 });
-const mSection = document.getElementById('metrics');
-if (mSection) metricObserver.observe(mSection);
-
-
+// Floating memory fragments canvas
 (function() {
   const canvas = document.getElementById('bg-canvas');
   const ctx = canvas.getContext('2d');
