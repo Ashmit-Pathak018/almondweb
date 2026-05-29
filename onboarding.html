@@ -1,0 +1,519 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Join Almond — Governed Memory Research</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=IBM+Plex+Mono:wght@300;400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="ob-page">
+
+    <div class="grid-overlay"></div>
+    <canvas id="starfield"></canvas>
+    <div id="scroll-progress"></div>
+
+    <!-- NAVBAR -->
+    <nav class="navbar">
+        <a href="index.html" class="logo" style="text-decoration:none;">ALMOND</a>
+        <div class="nav-links">
+            <a href="index.html">← Main Site</a>
+            <a href="#what" class="active">Mission</a>
+            <a href="#team">Team</a>
+            <a href="#roles">Roles</a>
+            <a href="#process">Process</a>
+            <a href="#faq">FAQ</a>
+            <a href="#roadmap">Roadmap</a>
+            <a href="#contact">Contact</a>
+        </div>
+    </nav>
+
+    <!-- HERO -->
+    <div class="ob-hero fade-up">
+        <a href="index.html" class="ob-back">← Back to Almond</a>
+
+        <div class="ob-status-row">
+            <div class="ob-status-item"><span class="sdot"></span>Research Phase</div>
+            <div class="ob-status-item"><span class="sdot"></span>Active Development</div>
+            <div class="ob-status-item"><span class="sdot"></span>Open Collaboration</div>
+        </div>
+
+        <h1 class="ob-title">Join The<br><span class="ob-accent">Experiment.</span></h1>
+
+        <p class="ob-sub">
+            Almond is an experimental cognition research project exploring governed memory, temporal reasoning, retrieval systems, and artificial continuity.
+            <br><br>
+            <strong>We are not building a product.</strong> We are exploring an idea. If you want to help build the thing rather than just use it — this is for you.
+        </p>
+
+        <div class="btn-group visible">
+            <a href="#roles" class="btn btn-primary">See Open Roles</a>
+            <a href="#what" class="btn">Read the Mission</a>
+        </div>
+    </div>
+
+    <hr class="ob-divider">
+
+    <!-- SECTION 1: WHAT WE ARE BUILDING -->
+    <div id="what" class="ob-section fade-up">
+        <div class="ob-section-inner">
+            <div class="section-label">Section 01 — The Goal</div>
+            <h2 class="section-title">What we are building.</h2>
+
+            <div style="display:grid; grid-template-columns:1fr 1fr; gap:48px; margin-top:48px; align-items:start;">
+                <div>
+                    <p style="color:var(--text-2); font-size:0.96rem; line-height:1.95; margin-bottom:20px;">
+                        Most AI systems treat memory as storage. Add more tokens, retrieve semantically, discard old context. It scales poorly and forgets things that matter while retaining things that don't.
+                    </p>
+                    <p style="color:var(--text-2); font-size:0.96rem; line-height:1.95; margin-bottom:20px;">
+                        Almond explores whether memory should behave more like cognition. The project investigates persistence, forgetting, temporal reasoning, memory governance, and continuity across long conversations.
+                    </p>
+                    <p style="color:var(--text-2); font-size:0.96rem; line-height:1.95;">
+                        <strong style="color:var(--text);">This is not a commercial product.</strong> This is an ongoing research effort. Some experiments fail. Most assumptions turn out to be wrong. That's the point.
+                    </p>
+                </div>
+                <div style="display:flex; flex-direction:column; gap:14px;">
+                    <div class="card" style="border-color:var(--border-amber);">
+                        <span class="card-tag">Current Stage</span>
+                        <h3 style="font-size:1rem;">Active Experimentation</h3>
+                        <p>T-MMU architecture stable. Temporal cognition work ongoing. Almond Lab v1 running.</p>
+                    </div>
+                    <div class="card">
+                        <span class="card-tag">What exists</span>
+                        <h3 style="font-size:1rem;">Memory architecture, benchmarks, observability tooling, retrieval traces.</h3>
+                        <p>More than a concept. Less than a finished system.</p>
+                    </div>
+                    <div class="card">
+                        <span class="card-tag">Time commitment</span>
+                        <h3 style="font-size:1rem;">Flexible — from occasional to deep.</h3>
+                        <p>Some contributors work a few hours a week. Some go deep. Both are useful.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <hr class="ob-divider">
+
+    <!-- SECTION 2: TEAM -->
+    <div id="team" class="ob-section fade-up">
+        <div class="ob-section-inner">
+            <div class="section-label">Section 02 — Current Team</div>
+            <h2 class="section-title">Who's here.</h2>
+            <p class="section-subtitle">Transparency about the current team and where gaps exist.</p>
+
+            <div class="team-grid">
+                <div class="team-card">
+                    <div class="team-avatar">AP</div>
+                    <div class="team-name">Ashmit Pathak</div>
+                    <div class="team-role-label">Founder</div>
+                    <div class="team-focus">
+                        <span class="tag tag-amber">Architecture</span>
+                        <span class="tag tag-amber">Memory Systems</span>
+                        <span class="tag tag-amber">Research</span>
+                    </div>
+                </div>
+                <div class="team-card team-open">
+                    <div class="team-avatar open-avatar">+</div>
+                    <div class="team-name" style="color:var(--text-3);">Open Position</div>
+                    <div class="team-role-label">Frontend Contributor</div>
+                    <div class="team-focus">
+                        <span class="tag">Visualization</span>
+                        <span class="tag">Dashboards</span>
+                    </div>
+                </div>
+                <div class="team-card team-open">
+                    <div class="team-avatar open-avatar">+</div>
+                    <div class="team-name" style="color:var(--text-3);">Open Position</div>
+                    <div class="team-role-label">Research Contributor</div>
+                    <div class="team-focus">
+                        <span class="tag">Cognition</span>
+                        <span class="tag">Memory Systems</span>
+                    </div>
+                </div>
+                <div class="team-card team-open">
+                    <div class="team-avatar open-avatar">+</div>
+                    <div class="team-name" style="color:var(--text-3);">Open Position</div>
+                    <div class="team-role-label">Evaluation Contributor</div>
+                    <div class="team-focus">
+                        <span class="tag">Benchmarking</span>
+                        <span class="tag">Analysis</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <hr class="ob-divider">
+
+    <!-- SECTION 3: OPEN ROLES -->
+    <div id="roles" class="ob-section fade-up">
+        <div class="ob-section-inner">
+            <div class="section-label">Section 03 — Open Roles</div>
+            <h2 class="section-title">Where help is needed.</h2>
+            <p class="section-subtitle">Each role has a real scope. Not "we'd love help with anything." Specific work, specific priority.</p>
+
+            <div class="ob-roles-grid">
+
+                <div class="ob-role-card">
+                    <div class="ob-role-meta">
+                        <span class="ob-badge badge-high">High Priority</span>
+                        <span class="ob-badge badge-adv">Advanced</span>
+                    </div>
+                    <h4>Memory Systems</h4>
+                    <p>Work on retrieval ranking, persistence scoring, memory organization across L1–L4 tiers, and temporal reconstruction. This is the core of the project.</p>
+                    <div class="ob-role-skills">
+                        <span class="tag tag-amber">Python</span>
+                        <span class="tag">Embeddings</span>
+                        <span class="tag">Retrieval Systems</span>
+                        <span class="tag">Vector DBs</span>
+                    </div>
+                </div>
+
+                <div class="ob-role-card">
+                    <div class="ob-role-meta">
+                        <span class="ob-badge badge-high">High Priority</span>
+                        <span class="ob-badge badge-int">Intermediate</span>
+                    </div>
+                    <h4>Evaluation & Benchmarks</h4>
+                    <p>Create test datasets, evaluate retrieval quality, run LongMemEval variants, track benchmark regressions, and measure memory behavior across sessions.</p>
+                    <div class="ob-role-skills">
+                        <span class="tag tag-amber">Python</span>
+                        <span class="tag">Testing</span>
+                        <span class="tag">Data Analysis</span>
+                    </div>
+                </div>
+
+                <div class="ob-role-card">
+                    <div class="ob-role-meta">
+                        <span class="ob-badge badge-med">Medium Priority</span>
+                        <span class="ob-badge badge-int">Intermediate</span>
+                    </div>
+                    <h4>Frontend Visualization</h4>
+                    <p>Help create dashboards, memory explorers, benchmark visualizations, and the Almond Lab observability interface. Make internal data legible.</p>
+                    <div class="ob-role-skills">
+                        <span class="tag tag-amber">HTML / CSS</span>
+                        <span class="tag">JavaScript</span>
+                        <span class="tag">React</span>
+                        <span class="tag">Data Viz</span>
+                    </div>
+                </div>
+
+                <div class="ob-role-card">
+                    <div class="ob-role-meta">
+                        <span class="ob-badge badge-med">Medium Priority</span>
+                        <span class="ob-badge badge-int">Intermediate</span>
+                    </div>
+                    <h4>Research Infrastructure</h4>
+                    <p>Build tooling that makes experiments reproducible, observable, and debuggable. Version control for experiments, config management, run logging.</p>
+                    <div class="ob-role-skills">
+                        <span class="tag tag-amber">Python</span>
+                        <span class="tag">DevOps</span>
+                        <span class="tag">Systems</span>
+                    </div>
+                </div>
+
+                <div class="ob-role-card">
+                    <div class="ob-role-meta">
+                        <span class="ob-badge badge-med">Medium Priority</span>
+                        <span class="ob-badge badge-beg">Beginner Friendly</span>
+                    </div>
+                    <h4>Documentation</h4>
+                    <p>Improve onboarding guides, write architecture explanations, create diagrams, produce technical writing that makes Almond more legible to new contributors.</p>
+                    <div class="ob-role-skills">
+                        <span class="tag tag-amber">Writing</span>
+                        <span class="tag">Diagrams</span>
+                        <span class="tag">Organization</span>
+                    </div>
+                </div>
+
+                <div class="ob-role-card">
+                    <div class="ob-role-meta">
+                        <span class="ob-badge badge-low">Exploratory</span>
+                        <span class="ob-badge badge-adv">Advanced</span>
+                    </div>
+                    <h4>Cognition Research</h4>
+                    <p>Investigate memory architectures, read literature on forgetting mechanisms, analyze long-term continuity in LLMs, propose new research directions.</p>
+                    <div class="ob-role-skills">
+                        <span class="tag tag-amber">Curiosity</span>
+                        <span class="tag">Research</span>
+                        <span class="tag">Papers</span>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <hr class="ob-divider">
+
+    <!-- SECTION 4: BEGINNER TASKS -->
+    <div id="beginner" class="ob-section fade-up">
+        <div class="ob-section-inner">
+            <div class="section-label">Section 04 — Entry Points</div>
+            <h2 class="section-title">You do not need to be an AI researcher.</h2>
+            <p class="section-subtitle">Real tasks that need doing right now. No PhD required.</p>
+
+            <div class="beginner-grid">
+                <div class="beginner-item"><span class="beginner-icon">✦</span>Improve documentation</div>
+                <div class="beginner-item"><span class="beginner-icon">✦</span>Create architecture diagrams</div>
+                <div class="beginner-item"><span class="beginner-icon">✦</span>Review onboarding guides</div>
+                <div class="beginner-item"><span class="beginner-icon">✦</span>Build visualizations</div>
+                <div class="beginner-item"><span class="beginner-icon">✦</span>Organize benchmark data</div>
+                <div class="beginner-item"><span class="beginner-icon">✦</span>Write research summaries</div>
+                <div class="beginner-item"><span class="beginner-icon">✦</span>Summarize relevant papers</div>
+                <div class="beginner-item"><span class="beginner-icon">✦</span>Create UI components</div>
+                <div class="beginner-item"><span class="beginner-icon">✦</span>Write test cases</div>
+                <div class="beginner-item"><span class="beginner-icon">✦</span>Review open questions</div>
+            </div>
+
+            <p style="margin-top:32px; font-size:0.86rem; color:var(--text-3); max-width:600px; line-height:1.85;">
+                The project needs people who can write clearly, think carefully, and ship small things reliably — as much as it needs engineers.
+            </p>
+        </div>
+    </div>
+
+    <hr class="ob-divider">
+
+    <!-- SECTION 5: HOW WORK HAPPENS -->
+    <div id="process" class="ob-section fade-up">
+        <div class="ob-section-inner">
+            <div class="section-label">Section 05 — How It Works</div>
+            <h2 class="section-title">The process.</h2>
+            <p class="section-subtitle">No application. No interview. Just: choose, discuss, build.</p>
+
+            <div class="process-steps">
+                <div class="process-step">
+                    <div class="step-num">01</div>
+                    <div class="step-title">Choose an area</div>
+                    <div class="step-desc">Pick a role or task that matches your interests and available time.</div>
+                </div>
+                <div class="process-step">
+                    <div class="step-num">02</div>
+                    <div class="step-title">Discuss</div>
+                    <div class="step-desc">Reach out via Discord or email. Get context. Ask questions.</div>
+                </div>
+                <div class="process-step">
+                    <div class="step-num">03</div>
+                    <div class="step-title">Get resources</div>
+                    <div class="step-desc">Receive relevant docs, codebases, prior experiments, and guidance.</div>
+                </div>
+                <div class="process-step">
+                    <div class="step-num">04</div>
+                    <div class="step-title">Build</div>
+                    <div class="step-desc">Work at your own pace. Small contributions are valued as much as large ones.</div>
+                </div>
+                <div class="process-step">
+                    <div class="step-num">05</div>
+                    <div class="step-title">Review & integrate</div>
+                    <div class="step-desc">Work gets reviewed, discussed, and merged into the research base.</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <hr class="ob-divider">
+
+    <!-- SECTION 6: PRIORITIES BOARD -->
+    <div id="priorities" class="ob-section fade-up">
+        <div class="ob-section-inner">
+            <div class="section-label">Section 06 — Current Priorities</div>
+            <h2 class="section-title">What needs work right now.</h2>
+            <p class="section-subtitle">This board reflects the current state of the project. It changes.</p>
+
+            <div class="priorities-board">
+                <div>
+                    <div class="priority-col-header ph-high">● High</div>
+                    <div class="priority-item">Temporal Reasoning</div>
+                    <div class="priority-item">Benchmark Expansion</div>
+                    <div class="priority-item">Memory Visualization</div>
+                    <div class="priority-item">Cross-Session Coherence</div>
+                </div>
+                <div>
+                    <div class="priority-col-header ph-med">● Medium</div>
+                    <div class="priority-item">Documentation</div>
+                    <div class="priority-item">Frontend Improvements</div>
+                    <div class="priority-item">Observability Tooling</div>
+                    <div class="priority-item">Research Infrastructure</div>
+                </div>
+                <div>
+                    <div class="priority-col-header ph-low">● Exploratory</div>
+                    <div class="priority-item">Agent Architectures</div>
+                    <div class="priority-item">Identity Continuity Research</div>
+                    <div class="priority-item">Branding & Visual Design</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <hr class="ob-divider">
+
+    <!-- SECTION 7: FAQ -->
+    <div id="faq" class="ob-section fade-up">
+        <div class="ob-section-inner">
+            <div class="section-label">Section 07 — FAQ</div>
+            <h2 class="section-title">Questions.</h2>
+
+            <div class="faq-list">
+                <div class="faq-item">
+                    <div class="faq-q">
+                        <span class="faq-q-text">Do I need AI or ML experience?</span>
+                        <span class="faq-arrow">▾</span>
+                    </div>
+                    <div class="faq-a">No. Some roles require it — memory systems, retrieval engineering. Others don't — documentation, frontend, research summaries. Read the role descriptions carefully. If you're unsure, ask.</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-q">
+                        <span class="faq-q-text">Can beginners contribute?</span>
+                        <span class="faq-arrow">▾</span>
+                    </div>
+                    <div class="faq-a">Yes. The beginner-friendly tasks section lists real work that needs doing right now and doesn't require deep technical expertise. Starting small is fine — most contributors do.</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-q">
+                        <span class="faq-q-text">Is this paid?</span>
+                        <span class="faq-arrow">▾</span>
+                    </div>
+                    <div class="faq-a">No. Almond is a research project, not a company. There is no funding, no salary, no equity. Contributors work because they find the problem interesting.</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-q">
+                        <span class="faq-q-text">How much time is expected?</span>
+                        <span class="faq-arrow">▾</span>
+                    </div>
+                    <div class="faq-a">Whatever you have. Some contributors ship one thing a month. Some work weekly. There are no minimums. The project moves at the speed of interest, not obligation.</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-q">
+                        <span class="faq-q-text">Can I contribute occasionally rather than regularly?</span>
+                        <span class="faq-arrow">▾</span>
+                    </div>
+                    <div class="faq-a">Yes. A well-scoped one-time contribution is genuinely useful. You don't need to commit to an ongoing role.</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-q">
+                        <span class="faq-q-text">Can I propose my own ideas?</span>
+                        <span class="faq-arrow">▾</span>
+                    </div>
+                    <div class="faq-a">Yes, and encouraged. The project benefits from people who see problems the current team hasn't noticed. Bring ideas. The worst outcome is a conversation.</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-q">
+                        <span class="faq-q-text">What technologies does the project use?</span>
+                        <span class="faq-arrow">▾</span>
+                    </div>
+                    <div class="faq-a">Python for the core architecture and benchmarking. JavaScript / HTML / CSS for the frontend and Almond Lab. Vector databases for memory storage. LLM APIs for evaluation. Specifics are discussed during onboarding.</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <hr class="ob-divider">
+
+    <!-- SECTION 8: ROADMAP -->
+    <div id="roadmap" class="ob-section fade-up">
+        <div class="ob-section-inner">
+            <div class="section-label">Section 08 — Roadmap</div>
+            <h2 class="section-title">Where this is going.</h2>
+            <p class="section-subtitle">Not a product roadmap. A research trajectory. Directions may shift.</p>
+
+            <div class="roadmap">
+                <div class="roadmap-step">
+                    <div class="roadmap-dot rm-now">Now</div>
+                    <div class="roadmap-title">Temporal Reasoning</div>
+                    <div class="roadmap-desc">Chronology reconstruction across fragmented memory retrieval. Active experimentation.</div>
+                </div>
+                <div class="roadmap-step">
+                    <div class="roadmap-dot rm-next">Next</div>
+                    <div class="roadmap-title">Memory Governance</div>
+                    <div class="roadmap-desc">Improving P_eff scoring, decay modeling, and salience detection across memory tiers.</div>
+                </div>
+                <div class="roadmap-step">
+                    <div class="roadmap-dot">Later</div>
+                    <div class="roadmap-title">Cross-Session Continuity</div>
+                    <div class="roadmap-desc">Coherent reasoning and identity persistence across disconnected sessions.</div>
+                </div>
+                <div class="roadmap-step">
+                    <div class="roadmap-dot">Future</div>
+                    <div class="roadmap-title">Long-Term Cognition</div>
+                    <div class="roadmap-desc">Stable synthetic identity. Memory as a first-class cognitive process.</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <hr class="ob-divider">
+
+    <!-- SECTION 9: CONTACT -->
+    <div id="contact" class="ob-section fade-up">
+        <div class="ob-section-inner">
+            <div class="section-label">Section 09 — Contact</div>
+            <h2 class="section-title">Get in touch.</h2>
+            <p class="section-subtitle">No form. No application. Just a conversation about whether this is the right fit.</p>
+
+            <div class="contact-links">
+                <a href="#" class="contact-link">
+                    <span class="contact-link-icon">◈</span>
+                    Discord
+                </a>
+                <a href="#" class="contact-link">
+                    <span class="contact-link-icon">◉</span>
+                    GitHub
+                </a>
+                <a href="mailto:hello@almond.research" class="contact-link">
+                    <span class="contact-link-icon">◎</span>
+                    Email
+                </a>
+            </div>
+
+            <p style="margin-top:32px; font-size:0.8rem; color:var(--text-3); max-width:560px; line-height:1.85;">
+                Mention which role interests you and what you've built or written before. Even rough examples help. No resume needed.
+            </p>
+        </div>
+    </div>
+
+    <!-- FOOTER -->
+    <footer style="max-width:1500px; margin:0 auto;">
+        <div class="footer-status-grid">
+            <div class="fstat">
+                <div class="fstat-label">Research Status</div>
+                <div class="fstat-value"><span class="pulse-dot"></span> Active</div>
+            </div>
+            <div class="fstat">
+                <div class="fstat-label">Open Roles</div>
+                <div class="fstat-value">5 Areas</div>
+            </div>
+            <div class="fstat">
+                <div class="fstat-label">Current Focus</div>
+                <div class="fstat-value">Temporal Cognition</div>
+            </div>
+            <div class="fstat">
+                <div class="fstat-label">Build</div>
+                <div class="fstat-value">Experimental</div>
+            </div>
+            <div class="fstat">
+                <div class="fstat-label">Time</div>
+                <div class="fstat-value" id="live-clock">—</div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            © <span id="year"></span> Almond Research &nbsp;·&nbsp; Not a product. An investigation. &nbsp;·&nbsp; <a href="index.html" style="color:var(--text-3);text-decoration:none;">← Main Site</a>
+        </div>
+    </footer>
+
+    <script src="js/app.js"></script>
+    <script>
+        // FAQ accordion
+        document.querySelectorAll('.faq-q').forEach(q => {
+            q.addEventListener('click', () => {
+                const item = q.closest('.faq-item');
+                const wasOpen = item.classList.contains('open');
+                document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
+                if (!wasOpen) item.classList.add('open');
+            });
+        });
+    </script>
+</body>
+</html>
