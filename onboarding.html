@@ -28,7 +28,23 @@
             <a href="#roadmap">Roadmap</a>
             <a href="#contact">Contact</a>
         </div>
+        <button class="nav-hamburger" id="hamburger" aria-label="Open menu">
+            <span></span><span></span><span></span>
+        </button>
     </nav>
+
+    <!-- MOBILE MENU -->
+    <div class="mobile-menu" id="mobile-menu">
+        <button class="mobile-menu-close" id="mobile-menu-close" aria-label="Close menu">✕</button>
+        <a href="index.html" onclick="closeMobileMenu()">← Main Site</a>
+        <a href="#what" onclick="closeMobileMenu()">Mission</a>
+        <a href="#team" onclick="closeMobileMenu()">Team</a>
+        <a href="#roles" onclick="closeMobileMenu()">Roles</a>
+        <a href="#process" onclick="closeMobileMenu()">Process</a>
+        <a href="#faq" onclick="closeMobileMenu()">FAQ</a>
+        <a href="#roadmap" onclick="closeMobileMenu()">Roadmap</a>
+        <a href="#contact" onclick="closeMobileMenu()">Contact</a>
+    </div>
 
     <!-- HERO -->
     <div class="ob-hero fade-up">
@@ -62,19 +78,19 @@
             <div class="section-label">Section 01 — The Goal</div>
             <h2 class="section-title">What we are building.</h2>
 
-            <div style="display:grid; grid-template-columns:1fr 1fr; gap:48px; margin-top:48px; align-items:start;">
+            <div class="ob-goal-split">
                 <div>
-                    <p style="color:var(--text-2); font-size:0.96rem; line-height:1.95; margin-bottom:20px;">
+                    <p class="ob-goal-p">
                         Most AI systems treat memory as storage. Add more tokens, retrieve semantically, discard old context. It scales poorly and forgets things that matter while retaining things that don't.
                     </p>
-                    <p style="color:var(--text-2); font-size:0.96rem; line-height:1.95; margin-bottom:20px;">
+                    <p class="ob-goal-p">
                         Almond explores whether memory should behave more like cognition. The project investigates persistence, forgetting, temporal reasoning, memory governance, and continuity across long conversations.
                     </p>
-                    <p style="color:var(--text-2); font-size:0.96rem; line-height:1.95;">
+                    <p class="ob-goal-p">
                         <strong style="color:var(--text);">This is not a commercial product.</strong> This is an ongoing research effort. Some experiments fail. Most assumptions turn out to be wrong. That's the point.
                     </p>
                 </div>
-                <div style="display:flex; flex-direction:column; gap:14px;">
+                <div class="ob-goal-cards">
                     <div class="card" style="border-color:var(--border-amber);">
                         <span class="card-tag">Current Stage</span>
                         <h3 style="font-size:1rem;">Active Experimentation</h3>
@@ -454,15 +470,15 @@
             <p class="section-subtitle">No form. No application. Just a conversation about whether this is the right fit.</p>
 
             <div class="contact-links">
-                <a href="https://discord.gg/93uDVZqTw4" class="contact-link">
+                <a href="#" class="contact-link">
                     <span class="contact-link-icon">◈</span>
                     Discord
                 </a>
-                <a href="https://github.com/Ashmit-Pathak018/almondweb" class="contact-link">
+                <a href="#" class="contact-link">
                     <span class="contact-link-icon">◉</span>
                     GitHub
                 </a>
-                <a href="mailto:pathakasmit34@gmail.com" class="contact-link">
+                <a href="mailto:hello@almond.research" class="contact-link">
                     <span class="contact-link-icon">◎</span>
                     Email
                 </a>

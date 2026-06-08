@@ -29,7 +29,23 @@
             
             <a href="onboarding.html" class="nav-onboard">Onboarding ↗</a>
         </div>
+        <button class="nav-hamburger" id="hamburger" aria-label="Open menu">
+            <span></span><span></span><span></span>
+        </button>
     </nav>
+
+    <!-- MOBILE MENU -->
+    <div class="mobile-menu" id="mobile-menu">
+        <button class="mobile-menu-close" id="mobile-menu-close" aria-label="Close menu">✕</button>
+        <a href="#home" onclick="closeMobileMenu()">Home</a>
+        <a href="#philosophy" onclick="closeMobileMenu()">Philosophy</a>
+        <a href="#architecture" onclick="closeMobileMenu()">Architecture</a>
+        <a href="#formula" onclick="closeMobileMenu()">P_eff</a>
+        <a href="#questions" onclick="closeMobileMenu()">Research</a>
+        <a href="#journey" onclick="closeMobileMenu()">Log</a>
+        <a href="#lab" onclick="closeMobileMenu()">Lab</a>
+        <a href="onboarding.html" class="active">Onboarding ↗</a>
+    </div>
 
     <!-- HERO -->
     <section id="home" class="hero">

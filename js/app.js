@@ -236,3 +236,36 @@ window.addEventListener('mousemove', e => {
     document.body.style.backgroundPosition =
         `${(e.clientX / window.innerWidth) * 12}px ${(e.clientY / window.innerHeight) * 12}px`;
 }, { passive: true });
+
+// === HAMBURGER MENU ===
+const hamburger = document.getElementById('hamburger');
+const mobileMenu = document.getElementById('mobile-menu');
+const mobileClose = document.getElementById('mobile-menu-close');
+
+function openMobileMenu() {
+    mobileMenu?.classList.add('open');
+    hamburger?.classList.add('open');
+    document.body.style.overflow = 'hidden';
+}
+
+function closeMobileMenu() {
+    mobileMenu?.classList.remove('open');
+    hamburger?.classList.remove('open');
+    document.body.style.overflow = '';
+}
+
+hamburger?.addEventListener('click', openMobileMenu);
+mobileClose?.addEventListener('click', closeMobileMenu);
+
+// Close on overlay click
+mobileMenu?.addEventListener('click', e => {
+    if (e.target === mobileMenu) closeMobileMenu();
+});
+
+// Close on ESC
+document.addEventListener('keydown', e => {
+    if (e.key === 'Escape') closeMobileMenu();
+});
+
+// Make closeMobileMenu globally available for onclick attrs in HTML
+window.closeMobileMenu = closeMobileMenu;
